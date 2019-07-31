@@ -12,7 +12,23 @@
 4. Add Models *(Domain Entities)* folder.
 
 5. Add **DatabaseContext**.
+```cs
+   public class CabanasContext : DbContext
+    {
+        public CabanasContext(DbContextOptions options) : base(options)
+        {
+            
+        }
 
+        public DbSet<Cabana> Cabanas { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+        }
+    }
+```
+The
 6. Register the context with dependency injection:
 
 - Add config in `appsettings.json`:
